@@ -1,0 +1,210 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_gravity="center"
+    android:fillViewport="true"
+    android:gravity="center"
+    android:orientation="vertical"
+    tools:context=".SampleReaderActivity">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:gravity="center"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="TapID v0.0.1-SNAPSHOT"
+                android:textSize="24sp"
+                android:layout_marginTop="20dp"
+                android:textAlignment="center"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/status"
+                android:layout_marginVertical="20dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="24sp"
+                android:layout_marginTop="15.dp"
+                android:text="CONNECTION STATUS \n DISCONNECTED "
+                android:textAlignment="center"
+                android:textStyle="bold" />
+
+            <ImageView
+                android:id="@+id/image_ektp"
+                android:layout_width="180dp"
+                android:layout_height="180dp"
+                android:src="@drawable/ic_profile"
+                android:padding="10dp" />
+
+            <TextView
+                android:id="@+id/nik"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingVertical="5dp"
+                android:text="NIK:" />
+
+            <TextView
+                android:id="@+id/nama"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingVertical="5dp"
+                android:text="Nama:" />
+
+            <TextView
+                android:id="@+id/tempat_lahir"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingVertical="5dp"
+                android:text="Tempat Lahir: " />
+
+            <TextView
+                android:id="@+id/jenis_kelamin"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingVertical="5dp"
+                android:text="Jenis Kelamin: " />
+
+            <TextView
+                android:id="@+id/gol_darah"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingVertical="5dp"
+                android:text="Golongan darah: " />
+            <TextView
+                android:id="@+id/alamat"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingVertical="5dp"
+                android:text="Alamat: " />
+
+            <TextView
+                android:id="@+id/rt"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingVertical="5dp"
+                android:text="RT: " />
+
+            <TextView
+                android:id="@+id/rw"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingVertical="5dp"
+                android:text="RW: " />
+
+            <TextView
+                android:id="@+id/kelurahan"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingVertical="5dp"
+                android:text="Kelurahan: " />
+
+            <TextView
+                android:id="@+id/kecamatan"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingVertical="5dp"
+                android:text="Kecamatan: " />
+
+            <TextView
+                android:id="@+id/agama"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingVertical="5dp"
+                android:text="Agama: " />
+
+            <TextView
+                android:id="@+id/status_perkawinan"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingVertical="5dp"
+                android:text="Status Perkawinan: " />
+
+            <TextView
+                android:id="@+id/pekerjaan"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingVertical="5dp"
+                android:text="Pekerjaan: " />
+
+            <TextView
+                android:id="@+id/kewarganegaraan"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingVertical="5dp"
+                android:text="Kewarganegaraan: " />
+
+            <TextView
+                android:id="@+id/berlaku_higga"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingVertical="5dp"
+                android:text="Berlaku Hingga: " />
+
+            <Button
+                android:id="@+id/remove_listener"
+                android:padding="10dp"
+                android:layout_marginTop="5dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="remove listener"/>
+            <Button
+                android:id="@+id/start_listener"
+                android:layout_width="wrap_content"
+                android:text="start listener"
+                android:padding="10dp"
+                android:layout_marginTop="5dp"
+                android:layout_height="wrap_content"/>
+            <Button
+                android:id="@+id/status_listener"
+                android:layout_width="wrap_content"
+                android:text="status listener"
+                android:padding="10dp"
+                android:layout_marginTop="5dp"
+                android:layout_height="wrap_content"/>
+
+            <Button
+                android:id="@+id/nfc_status"
+                android:layout_width="wrap_content"
+                android:text="status nfc"
+                android:padding="10dp"
+                android:layout_marginBottom="5dp"
+                android:layout_marginTop="5dp"
+                android:layout_height="wrap_content"/>
+            <Button
+                android:id="@+id/device_status"
+                android:layout_width="wrap_content"
+                android:text="is supported device"
+                android:padding="10dp"
+                android:layout_marginBottom="5dp"
+                android:layout_marginTop="5dp"
+                android:layout_height="wrap_content"/>
+        </LinearLayout>
+        <LinearLayout
+            android:id="@+id/loading"
+            android:background="@color/white"
+            android:layout_width="300dp"
+            android:layout_centerInParent="true"
+            android:layout_height="100dp"
+            android:orientation="vertical"
+            android:visibility="gone"
+            android:gravity="center">
+            <ProgressBar
+                android:layout_width="30dp"
+                android:layout_height="30dp"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_marginTop="20dp"
+                android:layout_height="wrap_content"
+                android:text="Please wait..."/>
+        </LinearLayout>
+
+    </RelativeLayout>
+</ScrollView>
