@@ -12,9 +12,7 @@ dependencyResolutionManagement {
         mavenCentral()
         maven("https://jitpack.io") {
             credentials {
-                username = "jp_3leodokqr664k9udcb4srf4jmv"
-                // Add password if required
-                // password = "your_password_here"
+                username = "jp_b8plm0ddtf7a0kbahnn5gs6ft4"
             }
         }
     }

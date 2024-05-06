@@ -74,7 +74,6 @@ class SampleReaderActivity : AppCompatActivity(), OnProcessingListener {
         runOnUiThread {
             Log.d(TAG, "onReceiveDataEktp: $data")
             val results = Gson().fromJson(data, EKtpData::class.java)
-            loading.visibility = View.GONE
             nik.text = "NIK: ${results.nik}"
             nama.text = "Nama: ${results.nama}"
             golDarah.text = "Golongan Darah: ${results.golDarah}"
@@ -103,15 +102,21 @@ class SampleReaderActivity : AppCompatActivity(), OnProcessingListener {
                     bytesArray.size
                 )
             )
-            loading.visibility = View.VISIBLE
         }
     }
 
     override fun onError(code: Int, message: String) = with(binding) {
         runOnUiThread {
-            loading.visibility = View.GONE
-            Toast.makeText(applicationContext, message, Toast.LENGTH_SHORT).show()
+            Toast.makeText(
+                applicationContext,
+                "Error Code : $code, Message : $message",
+                Toast.LENGTH_LONG
+            ).show()
         }
+    }
+
+    override fun onProgressSamCloud(progress: Int) = with(binding) {
+        progressBar.setProgress(progress, true)
     }
 
     override fun onConnectedToSamCloud() = with(binding) {
@@ -128,7 +133,6 @@ class SampleReaderActivity : AppCompatActivity(), OnProcessingListener {
 
     override fun onDisconnectedToSamCloud() = with(binding) {
         runOnUiThread {
-            loading.visibility = View.GONE
             status.text = "CONNECTION STATUS \n DISCONNECTED"
             Toast.makeText(
                 this@SampleReaderActivity,

@@ -56,7 +56,7 @@ dependencies {
     implementation("com.google.code.gson:gson:2.10.1")
 
     //SDK SAM READER
-    implementation("com.github.irfanhafizh:sam-cloud:0.1.0@aar")
+    implementation("com.github.irfanhafizh:sam-cloud:0.1.1@aar")
 
     //MQTT Server
     implementation("com.hivemq:hivemq-mqtt-client:1.3.0")

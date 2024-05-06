@@ -12,37 +12,47 @@
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent">
+
         <LinearLayout
             android:layout_width="match_parent"
-            android:gravity="center"
             android:layout_height="match_parent"
+            android:gravity="center"
             android:orientation="vertical">
+
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="TapID v0.0.1-SNAPSHOT"
-                android:textSize="24sp"
                 android:layout_marginTop="20dp"
+                android:text="TapID v0.0.1-SNAPSHOT"
                 android:textAlignment="center"
+                android:textSize="24sp"
                 android:textStyle="bold" />
 
             <TextView
                 android:id="@+id/status"
-                android:layout_marginVertical="20dp"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:textSize="24sp"
+                android:layout_marginVertical="20dp"
                 android:layout_marginTop="15.dp"
                 android:text="CONNECTION STATUS \n DISCONNECTED "
                 android:textAlignment="center"
+                android:textSize="24sp"
                 android:textStyle="bold" />
+
+            <ProgressBar
+                android:id="@+id/progress_bar"
+                style="?android:attr/progressBarStyleHorizontal"
+                android:layout_width="200dp"
+                android:layout_height="30dp"
+                android:indeterminate="false" />
 
             <ImageView
                 android:id="@+id/image_ektp"
                 android:layout_width="180dp"
                 android:layout_height="180dp"
-                android:src="@drawable/ic_profile"
-                android:padding="10dp" />
+                android:layout_marginTop="16dp"
+                android:padding="10dp"
+                android:src="@drawable/ic_profile" />
 
             <TextView
                 android:id="@+id/nik"
@@ -78,6 +88,7 @@
                 android:layout_height="wrap_content"
                 android:paddingVertical="5dp"
                 android:text="Golongan darah: " />
+
             <TextView
                 android:id="@+id/alamat"
                 android:layout_width="wrap_content"
@@ -150,61 +161,45 @@
 
             <Button
                 android:id="@+id/remove_listener"
-                android:padding="10dp"
-                android:layout_marginTop="5dp"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="remove listener"/>
+                android:layout_marginTop="5dp"
+                android:padding="10dp"
+                android:text="remove listener" />
+
             <Button
                 android:id="@+id/start_listener"
                 android:layout_width="wrap_content"
-                android:text="start listener"
-                android:padding="10dp"
+                android:layout_height="wrap_content"
                 android:layout_marginTop="5dp"
-                android:layout_height="wrap_content"/>
+                android:padding="10dp"
+                android:text="start listener" />
+
             <Button
                 android:id="@+id/status_listener"
                 android:layout_width="wrap_content"
-                android:text="status listener"
-                android:padding="10dp"
+                android:layout_height="wrap_content"
                 android:layout_marginTop="5dp"
-                android:layout_height="wrap_content"/>
+                android:padding="10dp"
+                android:text="status listener" />
 
             <Button
                 android:id="@+id/nfc_status"
                 android:layout_width="wrap_content"
-                android:text="status nfc"
-                android:padding="10dp"
-                android:layout_marginBottom="5dp"
+                android:layout_height="wrap_content"
                 android:layout_marginTop="5dp"
-                android:layout_height="wrap_content"/>
+                android:layout_marginBottom="5dp"
+                android:padding="10dp"
+                android:text="status nfc" />
+
             <Button
                 android:id="@+id/device_status"
                 android:layout_width="wrap_content"
-                android:text="is supported device"
-                android:padding="10dp"
-                android:layout_marginBottom="5dp"
-                android:layout_marginTop="5dp"
-                android:layout_height="wrap_content"/>
-        </LinearLayout>
-        <LinearLayout
-            android:id="@+id/loading"
-            android:background="@color/white"
-            android:layout_width="300dp"
-            android:layout_centerInParent="true"
-            android:layout_height="100dp"
-            android:orientation="vertical"
-            android:visibility="gone"
-            android:gravity="center">
-            <ProgressBar
-                android:layout_width="30dp"
-                android:layout_height="30dp"/>
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_marginTop="20dp"
                 android:layout_height="wrap_content"
-                android:text="Please wait..."/>
+                android:layout_marginTop="5dp"
+                android:layout_marginBottom="5dp"
+                android:padding="10dp"
+                android:text="is supported device" />
         </LinearLayout>
-
     </RelativeLayout>
 </ScrollView>
