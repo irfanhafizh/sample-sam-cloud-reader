@@ -47,6 +47,7 @@ android {
 }
 
 dependencies {
+//    implementation(fileTree(mapOf("dir" to "libs", "include" to listOf("*.aar"))))
     implementation("androidx.core:core-ktx:1.12.0")
     implementation("androidx.appcompat:appcompat:1.6.1")
     implementation("com.google.android.material:material:1.11.0")
@@ -56,7 +57,7 @@ dependencies {
     implementation("com.google.code.gson:gson:2.10.1")
 
     //SDK SAM READER
-    implementation("com.github.irfanhafizh:sam-cloud:0.1.1@aar")
+    implementation("com.github.Asli-RI:tap-id-android:0.1.0@aar")
 
     //MQTT Server
     implementation("com.hivemq:hivemq-mqtt-client:1.3.0")
@@ -64,4 +65,5 @@ dependencies {
 
     // RxJava
     implementation("io.reactivex.rxjava2:rxjava:2.2.19")
+
 }
