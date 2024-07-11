@@ -28,9 +28,8 @@ class SampleReaderActivity : AppCompatActivity(), OnProcessingListener {
             applicationContext,
             this@SampleReaderActivity,
             lifecycle,
-            ""
+            "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJYWFgtWFhYLVhYWCIsImF1ZCI6WyJHUk9VUCIsIkFTTElSSSBUZXN0IDIiLCJUZXN0aW5nIFRhcElEIDIiXSwiaXNzIjoiYWJhaC5ldG95Lmthc2VwIiwiZXhwIjoxNzUxNTI2Njc2LCJpYXQiOjE3MjA0MjI2NzYsImp0aSI6IjA4ZmZiYTY4LWUzYWYtNGVmMi04NTUwLWIxMGQ2OTc3Y2QwMyJ9.sEB5kwYmw1lQH5CV1l-czC0MZaWc1w70rXuzD1DA2Wk"
         )
-
         samCloudReader.addOnProcessingEktpListener(this)
 
         with(binding) {
@@ -96,6 +95,19 @@ class SampleReaderActivity : AppCompatActivity(), OnProcessingListener {
         runOnUiThread {
             val bytesArray = Base64.decode(data, Base64.DEFAULT)
             imageEktp.setImageBitmap(
+                BitmapFactory.decodeByteArray(
+                    bytesArray,
+                    0,
+                    bytesArray.size
+                )
+            )
+        }
+    }
+
+    override fun onReceiveSignature(data: String) = with(binding) {
+        runOnUiThread {
+            val bytesArray = Base64.decode(data, Base64.DEFAULT)
+            imageDigitalSignature.setImageBitmap(
                 BitmapFactory.decodeByteArray(
                     bytesArray,
                     0,
