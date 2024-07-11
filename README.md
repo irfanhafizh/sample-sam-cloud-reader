@@ -1,5 +1,5 @@
 
-# Sam Cloud Reader SDK v0.1.1
+# Sam Cloud Reader SDK v0.0.6
 
 Sam Cloud Reader is an android SDK used to extract e-KTP card and get output as JSON, this SDK  
 used NFC technology to process .
@@ -35,7 +35,7 @@ after add repositories Sam Cloud, Mqtt Server and RxJava then add dependency int
 ```groovy  
 dependencies {
 //SDK SAM CLOUD
-    implementation("com.github.irfanhafizh:sam-cloud:0.1.1@aar")
+    implementation("com.github.irfanhafizh:sam-cloud:0.0.6@aar")
 
 //MQTT Server  
     implementation("com.hivemq:hivemq-mqtt-client:1.3.0")
@@ -154,7 +154,20 @@ class SampleReaderActivity : AppCompatActivity(), OnProcessingListener {
 		)  
 		loading.visibility = View.VISIBLE  
 		}  
-	}  
+	}
+
+    	override fun onReceiveSignature(data: String) = with(binding) {
+        	runOnUiThread {
+            	val bytesArray = Base64.decode(data, Base64.DEFAULT)
+            	imageDigitalSignature.setImageBitmap(
+                	BitmapFactory.decodeByteArray(
+                    	bytesArray,
+                    	0,
+                    	bytesArray.size
+                	)
+            	)
+        	}
+    	}
   
 	override fun onError(code: Int, message: String) = with(binding) {  
 		runOnUiThread {  
