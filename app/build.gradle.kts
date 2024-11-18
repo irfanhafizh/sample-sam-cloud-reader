@@ -1,6 +1,16 @@
+import java.io.FileInputStream
+import java.util.Properties
+
 plugins {
     id("com.android.application")
     id("org.jetbrains.kotlin.android")
+}
+
+val localPropertiesFile = rootProject.file("local.properties")
+val localProperties = Properties()
+
+if (localPropertiesFile.exists()) {
+    localProperties.load(FileInputStream(localPropertiesFile))
 }
 
 android {
@@ -15,8 +25,15 @@ android {
         versionName = "1.0"
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
+        buildConfigField(
+            "String", "TAP_ID_TOKEN", "\"${localProperties["TAP_ID_TOKEN"]}\""
+        )
     }
     buildTypes {
+        debug {
+            isMinifyEnabled = false
+            isDebuggable = true
+        }
         release {
             isDebuggable = true
             isMinifyEnabled = true
@@ -30,6 +47,7 @@ android {
         viewBinding = true
         //noinspection DataBindingWithoutKapt
         dataBinding = true
+        buildConfig = true
     }
     compileOptions {
         sourceCompatibility = JavaVersion.VERSION_1_8
@@ -57,12 +75,12 @@ dependencies {
     implementation("com.google.code.gson:gson:2.10.1")
 
     //SDK SAM READER
-    implementation("com.github.Asli-RI:tap-id-android:0.0.6@aar")
+    implementation("com.github.Asli-RI:tap-id-android:0.1.3@aar")
 
     //MQTT Server
     implementation("com.hivemq:hivemq-mqtt-client:1.3.0")
     implementation("com.hivemq:hivemq-mqtt-client-reactor:1.3.0")
 
     // RxJava
-    implementation("io.reactivex.rxjava2:rxjava:2.2.19")
+//    implementation("io.reactivex.rxjava2:rxjava:2.2.19")
 }

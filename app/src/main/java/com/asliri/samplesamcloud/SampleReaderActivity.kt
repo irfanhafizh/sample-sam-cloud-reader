@@ -5,7 +5,6 @@ import android.os.Bundle
 import android.util.Base64
 import android.util.Log
 import android.view.LayoutInflater
-import android.view.View
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.asliri.samcloud.SamCloudReader
@@ -28,10 +27,9 @@ class SampleReaderActivity : AppCompatActivity(), OnProcessingListener {
             applicationContext,
             this@SampleReaderActivity,
             lifecycle,
-            "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJYWFgtWFhYLVhYWCIsImF1ZCI6WyJHUk9VUCIsIkFTTElSSSBUZXN0IDIiLCJUZXN0aW5nIFRhcElEIDIiXSwiaXNzIjoiYWJhaC5ldG95Lmthc2VwIiwiZXhwIjoxNzUxNTI2Njc2LCJpYXQiOjE3MjA0MjI2NzYsImp0aSI6IjA4ZmZiYTY4LWUzYWYtNGVmMi04NTUwLWIxMGQ2OTc3Y2QwMyJ9.sEB5kwYmw1lQH5CV1l-czC0MZaWc1w70rXuzD1DA2Wk"
+            BuildConfig.TAP_ID_TOKEN
         )
         samCloudReader.addOnProcessingEktpListener(this)
-
         with(binding) {
             startListener.setOnClickListener {
                 samCloudReader.addOnProcessingEktpListener(this@SampleReaderActivity)
